@@ -1,10 +1,12 @@
 import * as S from './intro.style.ts'
 import tree from "@images/tree.png"
+import Pause from "@ui/pause/pause.tsx";
 
 export const Intro = () => {
 
     return (
         <S.IntroStyled>
+            <Pause/>
             <S.RoadBox>
                 <S.Road>
                     <S.Car/>
