@@ -1,12 +1,16 @@
 import * as S from './intro.style.ts'
 import tree from "@images/tree.png"
 import Pause from "@ui/pause/pause.tsx";
+import {Game} from "@controllers/game.ts";
+import {useRef} from "react";
 
 export const Intro = () => {
+    const gameRef = useRef<Game>(new Game());
+
 
     return (
         <S.IntroStyled>
-            <Pause/>
+            <Pause onPause={gameRef.current.setPause} onPlay={gameRef.current.setPlay}/>
             <S.RoadBox>
                 <S.Road>
                     <S.Car/>

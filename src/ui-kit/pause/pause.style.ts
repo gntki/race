@@ -12,7 +12,7 @@ export const PauseStyled = styled.button`
     background: transparent;
     border: none;
     cursor: pointer;
-    transition: .1s ease-in;
+    transition: .1s ease-in-out;
     
     &:active {
         transform: scale(.9);
@@ -23,4 +23,18 @@ export const PauseStyled = styled.button`
         top: 0;
         left: 0;
     }
+`
+
+export const PauseImg = styled.img<{$isPause: boolean}>`
+    position: absolute;
+    top: 0;
+    left: 0;
+`
+
+export const PauseImgPlay = styled(PauseImg)<{$isPause: boolean}>`
+    opacity: ${({$isPause})=> $isPause ? 1 : 0};
+`
+
+export const PauseImgPause = styled(PauseImg)<{$isPause: boolean}>`
+    opacity: ${({$isPause})=> $isPause ? 0 : 1};
 `
